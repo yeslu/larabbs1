@@ -23,3 +23,8 @@ function category_nav_active($category_id)
 // if_uri () - 判断当前的 url 是否满足指定的 url；
 // if_route_pattern () - 判断当前的路由是否包含指定的字符；
 // if_uri_pattern () - 判断当前的 url 是否含有指定的字符；
+function make_excerpt($value, $length = 200)
+{
+    $excerpt = trim(preg_replace('/\r\n|\r|\n+/', ' ', strip_tags($value)));
+    return Str::limit($excerpt, $length);
+}
